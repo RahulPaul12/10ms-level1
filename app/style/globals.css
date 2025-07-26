@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+
+@theme{
+  --font-inter: Inter , sans-serif;
+}
+
+@layer base{
+    body{@apply font-inter}
+}
+
+@layer utilities{
+  .container {@apply max-w-[1200px] w-full mx-auto px-4 }
+}
+
