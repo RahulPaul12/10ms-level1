@@ -26,7 +26,7 @@ export default async function Home() {
     { cache: 'no-store' } // Ensures fresh data (like SSR)
   );
   const productData = await res.json()
-  const instructorData = productData.data.sections.find((section:section)=>section.type === "instructors"
+  const instructorData = productData.data.sections.find((section:section)=>section.type === "instructors")
   return (
       <section className="container">
           <div className="mb-7 pt-2 ">
