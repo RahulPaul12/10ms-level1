@@ -3,7 +3,6 @@ export interface productData {
         title : string;
         description: string
     }
-
 }
 export interface section {
   type: string;
