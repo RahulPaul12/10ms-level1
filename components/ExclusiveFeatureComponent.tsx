@@ -9,11 +9,11 @@ export default function ExclusiveFeatureComponent ({ exclusiveFeature }: Exclusi
     //         EXCLUSIVE FEATURE PART START  
     //    =====================================--> */}
       <section className="container">
-          <div className="mb-7">
-              <div className="pt-4 pb-2">
-                  <h2 className="mb-4 text-xl md:text-2xl font-semibold">{exclusiveFeature.name}</h2>
+          <div className="mb-16 flex flex-col gap-3">
+              <div className="pt-4 pb-2 md:pt-0">
+                  <h2 className="text-xl md:text-2xl font-semibold">{exclusiveFeature.name}</h2>
               </div>
-              <div className="mb-16 px-5 rounded-md border border-[#dbe1eb]"> 
+              <div className="px-5 rounded-md border border-[#dbe1eb]"> 
                 {
                   exclusiveFeature.values.map((data:ExclusiveCourseValue) => ( 
                       <div key={data.id} className="grid grid-cols-1 divide-y py-5 border-b last:border-none border-[#dbe1eb] ">
