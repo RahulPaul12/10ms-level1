@@ -1,4 +1,5 @@
 import { courseFeatureValue, section } from "@/types/types";
+import Link from "next/link";
 
 type CourseLaidComponentProps = {
   courseLaidData: section; 
@@ -18,7 +19,7 @@ export default function CourseLaidOut ({ courseLaidData }: CourseLaidComponentPr
                             <img src={data.icon}/>
                             <div>
                                 <h3 className="text-lg">
-                                  <a className="flex items-center hover:text-green" href="/skills/instructors/munzereen-shahid/">{data.title}</a>
+                                  <Link className="flex items-center hover:text-green" href="/skills/instructors/munzereen-shahid/">{data.title}</Link>
                                 </h3>
                                 <div className="text-sm">
                                   <p>{data.subtitle}</p>

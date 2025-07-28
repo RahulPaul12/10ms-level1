@@ -1,4 +1,5 @@
 import { instructorValue, section } from "@/types/types";
+import Link from "next/link";
 type InstructorComponentProps = {
   instructorData: section; 
 };
@@ -21,7 +22,7 @@ export default function InstructorComponent ({ instructorData }: InstructorCompo
                               </div>
                               <div>
                                   <h3 className="text-lg">
-                                      <a className="flex items-center hover:text-green" href="/skills/instructors/munzereen-shahid/">{instructor.name}</a>
+                                      <Link className="flex items-center hover:text-green" href="/skills/instructors/munzereen-shahid/">{instructor.name}</Link>
                                   </h3>
                                   <div className="text-sm">
                                     <div dangerouslySetInnerHTML={{ __html: instructor.description || '' }} />

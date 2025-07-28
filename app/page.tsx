@@ -7,9 +7,9 @@ import WhatYouLearnComponent from "@/components/WhatYouLearnComponent";
 import { section } from "@/types/types";
 
 interface QueryProps {
-  searchParams?: {
+  searchParams?: Promise<{
     lang?: string;
-  };
+  }>;
 }
 export default async function Home(props: QueryProps) {
   const searchParams = await props.searchParams;
@@ -30,7 +30,6 @@ export default async function Home(props: QueryProps) {
   const learnByCourse = productData.data.sections.find((section:section)=>section.type === "pointers")
   const exclusiveFeature = productData.data.sections.find((section:section)=>section.type === "feature_explanations")
   const trailerData = productData
- console.log(trailerData)
   return (
     <>
       {/* <!--===================================

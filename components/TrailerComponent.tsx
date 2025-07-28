@@ -1,8 +1,11 @@
+import Image from "next/image";
+
 type TrailerDataProps= {
           data:{
                checklist : [
                     {
                          text: string;
+                         icon: string;
                     }
                ];
                cta_text:{
@@ -12,20 +15,21 @@ type TrailerDataProps= {
      };   
 }
 export default function TrailerComponent ({trailerData}: {trailerData: TrailerDataProps}) {   
-    console.log(trailerData)
+
     return (
-          <section className="w-full md:max-w-[830px] lg:max-w-[400px] order-2 bg-white absolute right-0 md:top-[50px] md:absolute">
-               <div className="md:sticky md:top-[112px] ">
-                   <div className="md:border border-[#dbe1eb] md:rounded-md">
-                        <div className="hidden p-1 md:block" id="">
+          <section className="w-full lg:max-w-[400px] order-2 fixed bottom-0 right-0 lg:top-[50px] lg:absolute">
+               <div className="lg:sticky lg:top-[112px] ">
+                   <div className="lg:border border-[#dbe1eb] lg:rounded-md bg-white">
+                        <div className="hidden p-1 lg:block" id="">
                              <div className="relative overflow-hidden aspect-video">
-                                   <img src="dfdffd" alt="" />
-                                   <span className="text-white absolute left-1/2 top-1/2 z-[2] -translate-x-1/2 -translate-y-1/2 cursor-pointer">
-                                   ===</span>
+
+                                   <img src="gallery_img" alt="" />
+                                   {/* <span className="text-white absolute left-1/2 top-1/2 z-[2] -translate-x-1/2 -translate-y-1/2 cursor-pointer">
+                                   ===</span> */}
                              </div>
                         </div>
-                        <div className="w-full p-4 md:h-auto " id="variant">
-                              <div className="relative md:static">
+                        <div className="w-full p-4 md:h-auto">
+                              <div className="relative lg:static">
                                    <div className="flex flex-col w-full">
                                         <div className="flex items-center justify-between md:flex-col md:items-start">
                                              <div className="md:mb-3">
@@ -36,13 +40,13 @@ export default function TrailerComponent ({trailerData}: {trailerData: TrailerDa
                                    </div>
                               </div>
                          </div>
-                         <div className="hidden md:block">
+                         <div className="hidden lg:block">
                               <div className="py-2 md:p-4">
                                    <p className="mb-4 text-xl font-semibold">এই কোর্সে যা থাকছে</p>
                                    <ul className="grid">
                                         {
                                              trailerData.data.checklist.map((item, index) => (
-                                                  <li>{item.text}</li>
+                                                  <li key={index} className="flex items-center gap-4 mb-3 last:mb-0"><Image src={item?.icon} alt=""/>{item.text}</li>
                                              ))
                                         }
                                    </ul>
