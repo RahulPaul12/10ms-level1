@@ -4,17 +4,14 @@ type CourseLaidComponentProps = {
   courseLaidData: section; 
 };
 export default function CourseLaidOut ({ courseLaidData }: CourseLaidComponentProps){
-
     return (
         //   {/* <!--===================================
         //         HOW COURSE LAID OUT PART START  
         //    =====================================--> */}
           <section className="container">
-              <div className="mb-7">
-                  <div className="pt-4 pb-2">
-                      <h2 className="mb-4 text-xl md:text-2xl font-semibold">{courseLaidData.name}</h2>
-                  </div>
-                  <div className="mb-16 p-6 rounded-md border bg-[#111827] grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8"> 
+              <div className="mb-16 flex flex-col gap-3">
+                  <h2 className="text-xl md:text-2xl font-semibold">{courseLaidData.name}</h2>
+                  <div className="p-6 rounded-md border bg-[#111827] grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8"> 
                     {
                       courseLaidData.values.map((data:courseFeatureValue) => ( 
                           <div key={data.id} className="text-white flex items-start gap-4">
